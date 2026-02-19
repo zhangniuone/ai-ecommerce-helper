@@ -1,56 +1,82 @@
-# 🛒 AI E-commerce Helper - 智能电商运营助手
+# AI E-commerce Helper - AI 电商助手
 
-> **店铺运营 | 月收入 ¥200,000+ | ROI 900%+**
+> 电商运营的AI助手，支持商品描述、评论分析等
 
-## 💰 盈利模式
+## 📋 介绍
 
-| 收入来源 | 预计月收入 | 说明 |
-|----------|-----------|------|
-| SaaS 订阅 | ¥100,000-200,000 | 店铺按月付费 ¥299-2999/月 |
-| 增值服务 | ¥50,000-100,000 | 代运营、数据报告 |
-| 插件市场 | ¥30,000-50,000 | 第三方插件分成 |
+AI 电商助手 是一个基于 E-commerce 场景的 AI 智能工具。
 
-## 🎯 目标用户
+### ✨ 核心功能
 
-- 淘宝/天猫卖家
-- 京东商家
-- 拼多多店铺
-- 抖音电商
-- 快手电商
-
-## ✨ 核心功能
-
-- ✅ AI 商品描述生成
-- ✅ 智能客服 (7x24小时)
-- ✅ 销量预测分析
-- ✅ 竞品监控
-- ✅ 评价自动回复
-- ✅ 促销活动策划
+- ✅ **商品描述**
+- ✅ **评论分析**
+- ✅ **定价建议**
+- ✅ **竞品监控**
 
 ## 🚀 快速开始
 
+### 环境要求
+- Python 3.11+
+- OpenAI API Key
+
+
+### pip 安装
 ```bash
-git clone https://github.com/zhangniuone/ai-ecommerce-helper.git
-cd ai-ecommerce-helper
-docker-compose up -d
+pip install -r requirements.txt
 ```
 
-## 💰 定价
+### Docker 部署
+```bash
+docker build -t ai-project .
+docker run -p 8000:8000 ai-project
+```
 
-| 套餐 | 价格 | 店铺数 | 适合 |
-|------|------|--------|------|
-| 免费 | ¥0 | 1个 | 个人店铺 |
-| 标准版 | ¥299/月 | 3个 | 小团队 |
-| 专业版 | ¥999/月 | 10个 | 中型商家 |
-| 企业版 | ¥2999/月 | 无限 | 品牌方 |
 
-## 💡 商业优势
+## 📖 使用示例
 
-1. **市场大** - 中国电商从业者 1000万+
-2. **痛点多** - 运营成本高、客服压力大
-3. **付费意愿强** - 销售额的 1% 愿意投入
-4. **复购率高** - 每月都需要服务
+```python
+import requests
+
+API_URL = "http://localhost:8000/api/process"
+payload = {"input": "您的输入内容"}
+
+response = requests.post(API_URL, json=payload)
+result = response.json()
+print(result)
+```
+
+## 📚 API 文档
+
+| 方法 | 路径 | 描述 |
+|------|------|------|
+| GET | `/` | 健康检查 |
+| POST | `/api/process` | 主要处理接口 |
+
+## 🚀 部署指南
+
+支持 Vercel、Railway、Render、Heroku、Docker 等平台部署。
+
+## 📁 项目结构
+
+```
+├── app.py              # 主应用入口
+├── requirements.txt    # Python 依赖
+├── Dockerfile          # Docker 配置
+├── .gitignore         # Git 忽略配置
+└── README.md          # 项目文档
+```
+
+## 🤝 贡献指南
+
+1. Fork 本项目
+2. 创建分支
+3. 提交更改
+4. 创建 Pull Request
+
+## 📄 许可证
+
+MIT License
 
 ---
 
-**License:** MIT
+**Made with ❤️ by AI Team**
